@@ -425,7 +425,6 @@ const LandingSection4 = () => {
                     src={`/images/${s.thumbnail}`}
                     alt=""
                     className="rounded"
-                    children={undefined}
                     translateZ={25}
                     rotateX={-15}
                   />

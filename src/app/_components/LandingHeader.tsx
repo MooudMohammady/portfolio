@@ -11,7 +11,7 @@ const LandingHeader = () => {
 
   useEffect(() => {
     setMode(theme as "light" | "dark");
-  }, []);
+  }, [theme]);
 
   const toggleColorMode = () => {
     document.documentElement.classList.toggle("dark");

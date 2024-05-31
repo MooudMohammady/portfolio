@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 import "./globals.css";
 
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { ThemeProvider } from "next-themes";
 
 export const metadata: Metadata = {
@@ -28,10 +28,6 @@ export const metadata: Metadata = {
     siteName: "webclare | موعود محمدی تبار",
   },
   metadataBase: new URL("https://webclare.ir"),
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "white" },
-    { media: "(prefers-color-scheme: dark)", color: "black" },
-  ],
   verification: {
     google: "google",
     yandex: "yandex",
@@ -41,6 +37,13 @@ export const metadata: Metadata = {
     },
   },
 };
+
+export const viewport : Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "white" },
+    { media: "(prefers-color-scheme: dark)", color: "black" },
+  ],
+}
 
 export default function RootLayout({
   children,

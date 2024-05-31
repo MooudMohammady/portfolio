@@ -79,7 +79,6 @@ const LandingSection1 = () => {
               src="/images/profile.jpg"
               alt="'webclare', 'webclare.ir', 'موعود محمدی تبار'"
               className="rounded-full w-44 md:w-80 hover:grayscale"
-              children={undefined}
               rotateZ={10}
               translateZ={60}
             />
