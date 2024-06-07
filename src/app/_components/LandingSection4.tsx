@@ -12,7 +12,7 @@ const samples = [
     thumbnail: "website1.png",
     title: "Iranverse | Crypto platform",
     status: "درحال پیشرفت",
-    progress:35,
+    progress: 35,
     Technologies: [
       {
         classes: "text-black bg-white",
@@ -48,7 +48,7 @@ const samples = [
     thumbnail: "website2.png",
     title: "Project Managment Service",
     status: "تمام شده",
-    progress:95,
+    progress: 95,
     Technologies: [
       {
         classes: "text-black bg-white",
@@ -84,7 +84,7 @@ const samples = [
     thumbnail: "website3.png",
     title: "NFT Marketplace",
     status: "تمام شده",
-    progress:100,
+    progress: 100,
     Technologies: [
       {
         classes: "text-black bg-white",
@@ -116,7 +116,7 @@ const samples = [
     thumbnail: "website4.png",
     title: "Modern portfolio",
     status: "تمام شده",
-    progress:100,
+    progress: 100,
     Technologies: [
       {
         classes: "text-black bg-white",
@@ -148,7 +148,7 @@ const samples = [
     thumbnail: "website5.png",
     title: "E-Commerce | Fullstack",
     status: "متوقف",
-    progress:45,
+    progress: 45,
     Technologies: [
       {
         classes: "text-black bg-white",
@@ -180,7 +180,7 @@ const samples = [
     thumbnail: "website6.png",
     title: "CMS v2 | Fullstack",
     status: "متوقف",
-    progress:67,
+    progress: 67,
     Technologies: [
       {
         classes: "text-black bg-white",
@@ -212,7 +212,7 @@ const samples = [
     thumbnail: "website7.png",
     title: "Desktop IDE",
     status: "تکمیل شده",
-    progress:85,
+    progress: 85,
     Technologies: [
       {
         classes: "text-white bg-gray-900",
@@ -240,7 +240,7 @@ const samples = [
     thumbnail: "website8.png",
     title: "E-Learning | Fullstack",
     status: "تکمیل شده",
-    progress:89,
+    progress: 89,
     Technologies: [
       {
         classes: "text-black bg-white",
@@ -272,7 +272,7 @@ const samples = [
     thumbnail: "website9.png",
     title: "Discord clone | Fullstack",
     status: "متوقف شده",
-    progress:63,
+    progress: 63,
     Technologies: [
       {
         classes: "text-white bg-sky-500",
@@ -304,7 +304,7 @@ const samples = [
     thumbnail: "website10.png",
     title: "CMS v1 | Fullstack",
     status: "متوقف",
-    progress:45,
+    progress: 45,
     Technologies: [
       {
         classes: "text-black bg-white",
@@ -419,12 +419,10 @@ const LandingSection4 = () => {
                   }`}
                   dir="ltr">
                   <CardItem
-                    as={Image}
-                    width={400}
-                    height={300}
+                    as={"img"}
                     src={`/images/${s.thumbnail}`}
                     alt=""
-                    className="rounded"
+                    className="rounded w-full"
                     translateZ={25}
                     rotateX={-15}
                   />
@@ -446,8 +444,12 @@ const LandingSection4 = () => {
                     ))}
                   </ul>
                   <div className="flex justify-between mt-2">
-                    <span className="px-4 py-1 rounded-full border">%پیشرفت: {s.progress}</span>
-                    <span className="px-4 py-1 rounded-full border">وضعیت: {s.status}</span>
+                    <span className="px-4 py-1 rounded-full border">
+                      %پیشرفت: {s.progress}
+                    </span>
+                    <span className="px-4 py-1 rounded-full border">
+                      وضعیت: {s.status}
+                    </span>
                   </div>
                 </div>
               </CardBody>
