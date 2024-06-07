@@ -76,7 +76,7 @@ const LandingSection1 = () => {
           <CardBody className="h-full w-full">
             <CardItem
               as={"img"}
-              src="/images/profile.jpg"
+              src="/photo_2024-06-03_10-29-54.jpg"
               alt="'webclare', 'webclare.ir', 'موعود محمدی تبار'"
               className="rounded-full w-44 md:w-80 hover:grayscale"
               rotateZ={10}
