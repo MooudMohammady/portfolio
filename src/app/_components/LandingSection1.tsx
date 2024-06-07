@@ -39,7 +39,8 @@ const LandingSection1 = () => {
         <p className="opacity-70">
           من موعود محمدی تبار با دو سال سابقه در توسعه وب به صورت فول استک،
           پلتفرم های پیچیده از
-          <br className="max-md:hidden"/> جمله SaaS را به راحتی پیاده سازی میکنم.
+          <br className="max-md:hidden" /> جمله SaaS را به راحتی پیاده سازی
+          میکنم.
         </p>
         <div className="flex gap-3 font-semibold max-md:w-full">
           <a
@@ -48,7 +49,7 @@ const LandingSection1 = () => {
             چجور پلتفرم هایی؟
           </a>
           <a
-            href="/portfolio.pdf"
+            href="/cv.pdf"
             download
             className="block border border-amber-500 text-amber-500 px-6 py-2 rounded-md max-md:flex-1 hover:bg-amber-500/30 active:bg-amber-500/10 transition">
             دانلود رزومه PDF
@@ -71,8 +72,7 @@ const LandingSection1 = () => {
           draggable="false"
           className="absolute w-[270px] md:w-[500px]"
         />
-        <CardContainer
-        containerClassName="py-0">
+        <CardContainer containerClassName="py-0">
           <CardBody className="h-full w-full">
             <CardItem
               as={"img"}
@@ -84,7 +84,6 @@ const LandingSection1 = () => {
             />
           </CardBody>
         </CardContainer>
-
       </div>
     </section>
   );
