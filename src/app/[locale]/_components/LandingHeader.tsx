@@ -1,13 +1,18 @@
 "use client";
+import { useLocale, useTranslations } from "next-intl";
 import { useTheme } from "next-themes";
+import { useRouter } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";
-import { FaBars, FaMoon, FaSun } from "react-icons/fa6";
+import { FaBars, FaLanguage, FaMoon, FaSun } from "react-icons/fa6";
 import { IoMdClose } from "react-icons/io";
 
 const LandingHeader = () => {
   const [mode, setMode] = useState<"light" | "dark">();
 
   const { theme } = useTheme();
+  const t = useTranslations("landing.header");
+  const locale = useLocale();
+  const router = useRouter();
 
   useEffect(() => {
     setMode(theme as "light" | "dark");
@@ -16,6 +21,10 @@ const LandingHeader = () => {
   const toggleColorMode = () => {
     document.documentElement.classList.toggle("dark");
     setMode((prevMode) => (prevMode === "light" ? "dark" : "light"));
+  };
+
+  const toggleLanguage = () => {
+    locale === "fa" ? router.push("/en") : router.push("/fa");
   };
 
   const sidebarBtn = useRef(null) as React.RefObject<HTMLInputElement>;
@@ -32,28 +41,28 @@ const LandingHeader = () => {
             <a
               href="#bio"
               className="px-4 py-3 flex justify-center relative after:absolute after:h-1 after:bg-amber-500 after:bottom-0 after:w-0 hover:after:w-full after:transition-all hover:text-amber-500 transition-colors">
-              بیوگرافی
+              {t("summary")}
             </a>
           </li>
           <li>
             <a
               href="#samples"
               className="px-4 py-3 flex justify-center relative after:absolute after:h-1 after:bg-amber-500 after:bottom-0 after:w-0 hover:after:w-full after:transition-all hover:text-amber-500 transition-colors">
-              نمونه کار ها
+              {t("projects")}
             </a>
           </li>
           <li>
             <a
               href="#skills"
               className="px-4 py-3 flex justify-center relative after:absolute after:h-1 after:bg-amber-500 after:bottom-0 after:w-0 hover:after:w-full after:transition-all hover:text-amber-500 transition-colors">
-              مهارت ها
+              {t("skills")}
             </a>
           </li>
           <li>
             <a
               href="#contact"
               className="px-4 py-3 flex justify-center relative after:absolute after:h-1 after:bg-amber-500 after:bottom-0 after:w-0 hover:after:w-full after:transition-all hover:text-amber-500 transition-colors">
-              ارتباط
+              {t("social")}
             </a>
           </li>
         </ul>
@@ -69,7 +78,6 @@ const LandingHeader = () => {
               <nav className="w-full">
                 <ul className="w-full divide-y divide-zinc-400/50 felx flex-col list-none m-0 p-0 text-xl">
                   <li className="flex w-full justify-between items-center">
-                    <img src="/images/CF_Logo.png" alt="" className="w-10" />
                     <button className="p-2 text-3xl" onClick={sideBarCloser}>
                       <IoMdClose />
                     </button>
@@ -79,7 +87,7 @@ const LandingHeader = () => {
                       href="#bio"
                       className="hover:text-amber-500 w-full pe-32 py-4"
                       onClick={sideBarCloser}>
-                      بیوگرافی
+                      {t("summary")}
                     </a>
                   </li>
                   <li className="px-2 py-4">
@@ -87,7 +95,7 @@ const LandingHeader = () => {
                       href="#skills"
                       className="hover:text-amber-500 w-full pe-32 py-4"
                       onClick={sideBarCloser}>
-                      مهارت ها
+                      {t("skills")}
                     </a>
                   </li>
                   <li className="px-2 py-4">
@@ -95,7 +103,7 @@ const LandingHeader = () => {
                       href="#samples"
                       className="hover:text-amber-500 w-full pe-32 py-4"
                       onClick={sideBarCloser}>
-                      نمونه کار ها
+                      {t("projects")}
                     </a>
                   </li>
                   <li className="px-2 py-4">
@@ -103,7 +111,7 @@ const LandingHeader = () => {
                       href="#contact"
                       className="hover:text-amber-500 w-full pe-32 py-4"
                       onClick={sideBarCloser}>
-                      ارتباط
+                      {t("social")}
                     </a>
                   </li>
                 </ul>
@@ -114,11 +122,17 @@ const LandingHeader = () => {
             className="bg-black/80 w-full h-[100vh] hidden fixed left-0 top-0 peer-checked/draft:block z-10"
             onClick={sideBarCloser}></div>
         </div>
-        <div>
+        <div className="flex gap-2">
           <button
             className="p-4 text-xl rounded-md bg-gray-500/20 flex justify-center items-center"
             onClick={toggleColorMode}>
             {mode === "dark" ? <FaSun /> : <FaMoon />}
+          </button>
+          <button
+            className="p-4 text-xl rounded-md bg-gray-500/20 flex justify-center items-center"
+            onClick={toggleLanguage}
+            title="Change Language">
+            <FaLanguage />
           </button>
         </div>
       </div>

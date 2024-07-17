@@ -1,4 +1,5 @@
 import { AnimatedTooltip } from "@/components/ui/animated-tooltip";
+import { useTranslations } from "next-intl";
 import React from "react";
 
 const skills = [
@@ -135,17 +136,13 @@ const skills = [
 ];
 
 const LandingSection3 = () => {
+  const t = useTranslations("landing.section3");
+
   return (
     <section className="flex flex-col gap-3 pt-16" id="skills">
       <div className="flex gap-2">
         <span className="bg-amber-500 h-7 w-1"></span>
-        <h2 className="text-2xl font-bold ">
-          واقعا چه{" "}
-          <span className="text-amber-500 drop-shadow-[0_0_20px_rgba(245,158,11,0.5)]">
-            چیزایی
-          </span>{" "}
-          رو بلدم؟
-        </h2>
+        <h2 className="text-2xl font-bold ">{t("title")}</h2>
       </div>
       <ul className="flex gap-3 flex-wrap max-md:justify-between">
         <AnimatedTooltip items={skills} />

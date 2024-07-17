@@ -1,6 +1,7 @@
 "use client";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 import { cn } from "@/lib/utils";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import React, { useCallback, useRef, useState } from "react";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
@@ -337,7 +338,9 @@ const samples = [
 const LandingSection4 = () => {
   const [activeSlide, setActiveSlide] = useState<number>(0);
   const [swiper, setSwiper] = useState<SwiperClass>();
+
   const sliderRef = useRef<SwiperRef>(null);
+  const t = useTranslations("landing.section4");
 
   const handlePrev = useCallback(() => {
     if (!sliderRef.current) return;
@@ -354,13 +357,7 @@ const LandingSection4 = () => {
       <div className="flex justify-between max-md:flex-col gap-3">
         <div className="flex gap-2">
           <span className="bg-amber-500 h-7 w-1"></span>
-          <h2 className="text-2xl font-bold ">
-            اما چه{" "}
-            <span className="text-amber-500 drop-shadow-[0_0_20px_rgba(245,158,11,0.5)]">
-              پلتفرم
-            </span>{" "}
-            هایی رو توسعه دادم؟
-          </h2>
+          <h2 className="text-2xl font-bold ">{t("title")}</h2>
         </div>
         <div className="flex gap-3 text-amber-500">
           <button

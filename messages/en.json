@@ -1,0 +1,38 @@
+{
+  "landing": {
+    "header": {
+      "summary": "Summary",
+      "projects": "Projects",
+      "skills": "Skills",
+      "social": "Social"
+    },
+    "section1": {
+      "sub-title": "Mooud Mohammadi tabar",
+      "title-start": "Development of ",
+      "title-middle": "large scale ",
+      "title-end": "web-based platforms.",
+      "description": "I have easily implemented large-scale platforms, including SAAS types, with over two years of experience in web development in full stack.",
+      "like-what": "What kind of platforms?",
+      "download-resume": "Download PDF resume"
+    },
+    "section2": {
+      "title": "Summary",
+      "description": "With over 2 years of experience working as a full-stack developer using React.js and Next.js for the front end and Node.js for the back end, I am proficient in various SQL and NoSQL databases and have complete mastery of the popular framework Next.js. Creating complex platforms and large scale platforms such as website builders, various CRM and CMS systems, implementing modern designs, and developing 3D websites are key capabilities of mine."
+    },
+    "section3": {
+      "title": "Skills"
+    },
+    "section4": {
+      "title": "Projects"
+    },
+    "section5": {
+      "title": "Social Networks"
+    },
+    "footer": {
+      "summary": "Summary",
+      "projects": "Projects",
+      "skills": "Skills",
+      "social": "Social"
+    }
+  }
+}

@@ -3,8 +3,12 @@ import React from "react";
 import { motion } from "framer-motion";
 import { FaArrowDown } from "react-icons/fa6";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
+import { useLocale, useTranslations } from "next-intl";
 
 const LandingSection1 = () => {
+  const t = useTranslations("landing.section1");
+  const locale = useLocale();
+
   return (
     <section className="md:py-32 py-10 flex justify-between max-md:flex-col max-md:px-2 relative">
       <a
@@ -28,31 +32,30 @@ const LandingSection1 = () => {
         </motion.span>
       </a>
       <div className="flex flex-col gap-4 md:w-8/12 max-md:order-2 max-md:text-center max-md:mt-10">
-        <h1 className="opacity-70">موعود محمدی تبار</h1>
+        <h1 className="opacity-70">{t("sub-title")}</h1>
         <p className="text-4xl md:text-7xl font-bold">
-          پیاده سازی{" "}
+          {t("title-start") + " "}
           <span className="text-amber-500 drop-shadow-[0_0_20px_rgba(245,158,11,0.5)]">
-            پلتفرم
+            {t("title-middle")}
           </span>{" "}
-          های <br /> پیچیده تحت وب
+          {t("title-end")}
         </p>
-        <p className="opacity-70">
-          من موعود محمدی تبار با دو سال سابقه در توسعه وب به صورت فول استک،
-          پلتفرم های پیچیده از
-          <br className="max-md:hidden" /> جمله SaaS را به راحتی پیاده سازی
-          میکنم.
-        </p>
+        <p className="opacity-70">{t("description")}</p>
         <div className="flex gap-3 font-semibold max-md:w-full">
           <a
             href="#samples"
             className="block bg-amber-500 text-gray-800 ring-4 ring-amber-500/50 px-6 py-2 rounded-md max-md:flex-1 transition-all hover:ring-2 hover:bg-amber-500/90 active:ring-4 active:bg-amber-500/70">
-            چجور پلتفرم هایی؟
+            {t("like-what")}
           </a>
           <a
-            href="/cv.pdf"
+            href={
+              locale === "fa"
+                ? "/موعود محمدی تبار - فرانت اند.pdf"
+                : "/MooudMohammadi-(europe).pdf"
+            }
             download
             className="block border border-amber-500 text-amber-500 px-6 py-2 rounded-md max-md:flex-1 hover:bg-amber-500/30 active:bg-amber-500/10 transition">
-            دانلود رزومه PDF
+            {t("download-resume")}
           </a>
         </div>
       </div>

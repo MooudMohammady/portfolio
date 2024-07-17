@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import React from "react";
 import {
   FaDiscord,
@@ -48,21 +49,19 @@ const contacts = [
 ];
 
 const LandingSection5 = () => {
+  const t = useTranslations("landing.section5");
+
   return (
     <section className="flex flex-col gap-3 pt-16" id="contact">
       <div className="flex gap-2">
         <span className="bg-amber-500 h-7 w-1"></span>
-        <h2 className="text-2xl font-bold ">
-          چطور باهم{" "}
-          <span className="text-amber-500 drop-shadow-[0_0_20px_rgba(245,158,11,0.5)]">
-            ارتباط
-          </span>{" "}
-          بگیریم؟
-        </h2>
+        <h2 className="text-2xl font-bold ">{t("title")}</h2>
       </div>
       <ul className="flex gap-3 flex-wrap justify-between">
         {contacts.map(({ icon: Icon, url, title }, i) => (
-          <li key={i} className="dark:bg-gray-500/20 bg-white shadow-md rounded-md dark:border border-gray-500/40 hover:opacity-70 transition-all max-md:flex-1">
+          <li
+            key={i}
+            className="dark:bg-gray-500/20 bg-white shadow-md rounded-md dark:border border-gray-500/40 hover:opacity-70 transition-all max-md:flex-1">
             <a
               href={url}
               className="flex gap-2 justify-center items-center py-2 px-6">
