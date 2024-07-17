@@ -2,7 +2,7 @@
 import React from "react";
 import { SessionProvider } from "next-auth/react";
 
-export default async function ClientProvider({
+export default function ClientProvider({
   children,
 }: {
   children: React.ReactNode;

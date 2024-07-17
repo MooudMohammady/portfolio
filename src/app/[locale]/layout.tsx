@@ -7,10 +7,12 @@ import { useLocale } from "next-intl";
 import AppProvider from "@/lib/AppProvider";
 import { notFound } from "next/navigation";
 
-export async function generateMetadata(): Promise<Metadata> {
-  const locale = useLocale();
-
-  return locale === "fa"
+export function generateMetadata({
+  params,
+}: {
+  params: { locale: "fa" | "en" };
+}): Metadata {
+  return params.locale === "fa"
     ? {
         title: "webclare | موعود محمدی تبار",
         description:
