@@ -17,10 +17,12 @@ model User {
 }
 
 model Project {
-  id           Int    @id @default(autoincrement())
+  id           Int      @id @default(autoincrement())
   title        String
   thumbnail    String
-  Technologies String
+  progress     Int
+  status       String
+  Technologies String[]
 }
 
 model File {
