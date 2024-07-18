@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import { SessionProvider } from "next-auth/react";
 import { ConfigProvider, theme as t } from "antd";
 import { useTheme } from "next-themes";
 
@@ -15,7 +14,7 @@ export default function ClientProvider({
       theme={{
         algorithm: theme === "dark" ? t.darkAlgorithm : t.defaultAlgorithm,
       }}>
-      <SessionProvider>{children}</SessionProvider>;
+      {children}
     </ConfigProvider>
   );
 }

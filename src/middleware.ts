@@ -15,32 +15,6 @@ let languageMiddleware = createMiddleware({
 });
 
 export async function middleware(request: NextRequest) {
-  const loginPage = "/auth/sign-in";
-  const protectedPaths = ["/admin", "/api/upload"];
-  const isProtectedPath = protectedPaths.some((path) =>
-    request.nextUrl.pathname.startsWith(path)
-  );
-
-  if (isProtectedPath) {
-    const token = await getToken({ req: request });
-
-    if (!token) {
-      const url = request.nextUrl.clone();
-      url.pathname = loginPage;
-      return NextResponse.redirect(url);
-    }
-
-    // بررسی نقش کاربر
-    if (
-      request.nextUrl.pathname.startsWith("/admin") &&
-      token.role !== "admin"
-    ) {
-      const url = request.nextUrl.clone();
-      url.pathname = "/";
-      return NextResponse.redirect(url);
-    }
-  }
-
   return languageMiddleware(request);
 }
 
