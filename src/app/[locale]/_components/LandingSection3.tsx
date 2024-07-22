@@ -73,11 +73,11 @@ const skills = [
     title: "Socket.io",
     image: "socket-io.png",
   },
-  {
-    id: 14,
-    title: "Docker",
-    image: "docker.webp",
-  },
+  // {
+  //   id: 14,
+  //   title: "Docker",
+  //   image: "docker.webp",
+  // },
   {
     id: 15,
     title: "Electron.js",
@@ -103,11 +103,11 @@ const skills = [
     title: "Graphql",
     image: "graphql.png",
   },
-  {
-    id: 20,
-    title: "NextAuth",
-    image: "logo-sm.png",
-  },
+  // {
+  //   id: 20,
+  //   title: "NextAuth",
+  //   image: "logo-sm.png",
+  // },
   {
     id: 21,
     title: "MongoDB",
