@@ -1,38 +1,175 @@
 {
-  "landing": {
-    "header": {
-      "summary": "Summary",
-      "projects": "Projects",
-      "skills": "Skills",
-      "social": "Social"
-    },
-    "section1": {
-      "sub-title": "Mooud Mohammadi tabar",
-      "title-start": "Building ",
-      "title-middle": "Intelligent Systems ",
-      "title-end": "web-based platforms.",
-      "description": "I build complex software products from problem analysis and system design to implementation, with a focus on frontend engineering, system architecture, and AI.",
-      "like-what": "What kind of platforms?",
-      "download-resume": "Download PDF resume"
-    },
-    "section2": {
-      "title": "Summary",
-      "description": "Software Engineer with 4+ years of experience in frontend development, system analysis, and product engineering, specializing in React and Next.js. Experienced in designing and building complex business platforms, ERP systems, and scalable web applications, from requirements and domain modeling to implementation and delivery. Currently focused on combining modern frontend architecture with AI-powered features and agentic workflows to build practical, intelligent software products."
-    },
-    "section3": {
-      "title": "Skills"
-    },
-    "section4": {
-      "title": "Projects"
-    },
-    "section5": {
-      "title": "Social Networks"
-    },
-    "footer": {
-      "summary": "Summary",
-      "projects": "Projects",
-      "skills": "Skills",
-      "social": "Social"
+  "nav": {
+    "about": "About",
+    "services": "Services",
+    "skills": "Skills",
+    "projects": "Projects",
+    "process": "Process",
+    "contact": "Contact",
+    "resume": "Resume",
+    "menu": "Menu"
+  },
+  "hero": {
+    "status": "Available for new projects",
+    "greeting": "Hi! I'm",
+    "nameA": "Mooud",
+    "nameB": "Mohammadi Tabar",
+    "rolePrefix": "a",
+    "roles": [
+      "Frontend Engineer",
+      "Solution Architect",
+      "Builder of Intelligent Platforms"
+    ],
+    "description": "For 4+ years I've been building complex software products — from problem analysis and system design to implementation and delivery — with a focus on React, Next.js, clean architecture and bringing AI into real products.",
+    "ctaProjects": "See my work!",
+    "ctaResume": "Download resume",
+    "statsLabels": ["Years of experience", "Projects", "Technologies"],
+    "scroll": "Scroll"
+  },
+  "about": {
+    "label": "About me",
+    "title": "An engineer who understands the problem, not just the code",
+    "p1": "Software engineer with 4+ years of experience in frontend development, system analysis, and product engineering, specializing in React and Next.js with TypeScript. I've designed and built complex business platforms, ERP systems, and scalable web applications — from requirements and domain modeling to implementation and delivery.",
+    "p2": "I'm currently focused on combining modern frontend architecture with AI capabilities and agentic workflows, to build products that don't just work — they think.",
+    "highlights": [
+      {
+        "title": "Analysis & Architecture",
+        "desc": "From problem statement to domain model and system design"
+      },
+      {
+        "title": "Clean, scalable code",
+        "desc": "Type-safe, reusable and maintainable components"
+      },
+      {
+        "title": "Performance & UX",
+        "desc": "Speed optimization with an obsession for interactive details"
+      },
+      {
+        "title": "Applied AI",
+        "desc": "Integrating agents and AI into real product workflows"
+      }
+    ],
+    "facts": {
+      "focus": "Main focus",
+      "focusValue": "React · Next.js · TypeScript",
+      "domain": "Domain",
+      "domainValue": "Enterprise platforms & ERP",
+      "now": "Currently",
+      "nowValue": "AI Agents & intelligent products"
     }
+  },
+  "services": {
+    "label": "Services",
+    "title": "What I can do for you",
+    "subtitle": "From idea to product — I'm by your side at whichever stage you need me.",
+    "items": [
+      {
+        "title": "Modern frontend development",
+        "desc": "Fast, beautiful and accessible UIs with React and Next.js — from landing pages to complex enterprise dashboards."
+      },
+      {
+        "title": "Fullstack development",
+        "desc": "API design & implementation, auth, realtime and databases — a complete product that actually works."
+      },
+      {
+        "title": "Architecture & analysis",
+        "desc": "Domain modeling, structuring large projects, and turning complex requirements into a clear technical roadmap."
+      },
+      {
+        "title": "AI & automation",
+        "desc": "Integrating AI and agentic workflows into your product to automate the repetitive and create intelligent experiences."
+      }
+    ]
+  },
+  "skills": {
+    "label": "Skills",
+    "title": "My toolbox",
+    "subtitle": "Technologies I work with — and live with — every day.",
+    "filters": {
+      "all": "All",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "database": "Databases",
+      "tools": "Tools"
+    }
+  },
+  "projects": {
+    "label": "Projects",
+    "title": "Work I'm proud of",
+    "subtitle": "A collection of real platforms — from crypto and e-commerce to ERP and desktop tooling.",
+    "filters": {
+      "all": "All",
+      "fullstack": "Fullstack",
+      "frontend": "Frontend",
+      "desktop": "Desktop"
+    },
+    "status": {
+      "completed": "Completed",
+      "in-progress": "In development",
+      "paused": "Paused"
+    },
+    "progress": "Progress",
+    "details": "Project details",
+    "descriptions": {
+      "iranverse": "A crypto platform with 3D interfaces, live market data and a modern interactive experience.",
+      "project-management": "A project management service with drag-and-drop Kanban boards, team collaboration and task management.",
+      "nft-marketplace": "An NFT marketplace with advanced filters, detail pages and smooth animations.",
+      "modern-portfolio": "A modern portfolio with particle animations and minimal design.",
+      "e-commerce": "A fullstack e-commerce store with cart, checkout flow and an admin panel.",
+      "cms-v2": "A next-generation CMS with modular architecture and a clean editing experience.",
+      "desktop-ide": "A lightweight desktop IDE with code highlighting and project management.",
+      "e-learning": "An e-learning platform with courses, quizzes, and instructor/student panels.",
+      "discord-clone": "A Discord clone with realtime chat, server and channel management.",
+      "cms-v1": "A content management system with full CRUD and authentication."
+    }
+  },
+  "process": {
+    "label": "Process",
+    "title": "From idea to product, step by step",
+    "subtitle": "A transparent process that keeps the project predictable and the results trustworthy.",
+    "steps": [
+      {
+        "title": "Discover & analyze",
+        "desc": "Deep understanding of the problem, the user and the business goals — before writing a single line of code."
+      },
+      {
+        "title": "Design & architect",
+        "desc": "Domain modeling, system design and UX with a clear roadmap."
+      },
+      {
+        "title": "Develop & build",
+        "desc": "Clean, type-safe code, continuous review and incremental delivery."
+      },
+      {
+        "title": "Deliver & improve",
+        "desc": "Deployment, monitoring and continuous optimization based on real data."
+      }
+    ]
+  },
+  "contact": {
+    "label": "Contact",
+    "titleA": "Let's build",
+    "titleB": "something amazing",
+    "subtitle": "For collaborations, projects or even just a technical chat — I'm reachable through any of these.",
+    "emailCta": "Send email",
+    "copy": "Copy email",
+    "copied": "Copied!",
+    "note": "I usually reply within 24 hours.",
+    "socialsTitle": "Follow me on social media"
+  },
+  "footer": {
+    "tagline": "Building digital experiences that are fast, beautiful and intelligent.",
+    "rights": "All rights reserved.",
+    "madeWith": "Built with Next.js, Tailwind & Framer Motion",
+    "backToTop": "Back to top"
+  },
+  "preloader": {
+    "name": "Mooud Mohammadi Tabar",
+    "loading": "Loading the experience..."
+  },
+  "notFound": {
+    "title": "Page not found",
+    "desc": "Looks like you've taken a wrong turn. Let's get you back home.",
+    "home": "Back to home"
   }
 }

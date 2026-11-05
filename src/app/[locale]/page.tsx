@@ -1,27 +1,36 @@
-import "swiper/css";
-import "swiper/css/bundle";
+import { unstable_setRequestLocale } from "next-intl/server";
+import Navbar from "./_components/Navbar";
+import Hero from "./_components/Hero";
+import TechMarquee from "./_components/TechMarquee";
+import About from "./_components/About";
+import Services from "./_components/Services";
+import Skills from "./_components/Skills";
+import Projects from "./_components/Projects";
+import Process from "./_components/Process";
+import Contact from "./_components/Contact";
+import Footer from "./_components/Footer";
 
-import LandingHeader from "./_components/LandingHeader";
-import LandingSection1 from "./_components/LandingSection1";
-import LandingSection2 from "./_components/LandingSection2";
-import LandingSection3 from "./_components/LandingSection3";
-import LandingSection4 from "./_components/LandingSection4";
-import LandingSection5 from "./_components/LandingSection5";
-import LandingFooter from "./_components/LandingFooter";
+export default async function Home({
+  params,
+}: {
+  params: { locale: string };
+}) {
+  unstable_setRequestLocale(params.locale);
 
-export default function Home() {
   return (
     <>
-      <LandingHeader />
-      <main className="flex flex-col max-w-7xl mx-auto px-2">
-        <LandingSection1 />
-        <hr className="block border-gray-500/30 mt-16" />
-        <LandingSection2 />
-        <LandingSection3 />
-        <LandingSection4 />
-        <LandingSection5 />
+      <Navbar />
+      <main className="relative">
+        <Hero />
+        <TechMarquee />
+        <About />
+        <Services />
+        <Skills />
+        <Projects />
+        <Process />
+        <Contact />
       </main>
-      <LandingFooter />
+      <Footer />
     </>
   );
 }

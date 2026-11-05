@@ -4,10 +4,8 @@ const withNextIntl = createNextIntlPlugin("./src/i18n.ts");
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: false,
-  experimental: {
-    serverComponentsExternalPackages: ["@prisma/client", "bcryptjs"],
-  },
+  reactStrictMode: true,
+  poweredByHeader: false,
 };
 
 export default withNextIntl(nextConfig);

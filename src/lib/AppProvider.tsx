@@ -1,8 +1,7 @@
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
+import MotionProvider from "@/components/site/MotionProvider";
 import React from "react";
-import ClientProvider from "./ClientProvider";
-import { AntdRegistry } from "@ant-design/nextjs-registry";
 
 export default async function AppProvider({
   children,
@@ -10,11 +9,10 @@ export default async function AppProvider({
   children: React.ReactNode;
 }) {
   const messages = await getMessages();
+
   return (
     <NextIntlClientProvider messages={messages}>
-      <AntdRegistry>
-        <ClientProvider>{children}</ClientProvider>;
-      </AntdRegistry>
+      <MotionProvider>{children}</MotionProvider>
     </NextIntlClientProvider>
   );
 }

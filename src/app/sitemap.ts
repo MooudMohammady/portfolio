@@ -1,18 +1,33 @@
 import { MetadataRoute } from "next";
+import { SITE_URL } from "@/lib/data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const lastModified = new Date();
+
   return [
     {
-      url: "https://webclare.ir",
-      lastModified: new Date(),
+      url: SITE_URL,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 1,
+      alternates: {
+        languages: {
+          fa: `${SITE_URL}/fa`,
+          en: `${SITE_URL}/en`,
+        },
+      },
     },
     {
-      url: "https://webclare.ir/fa",
-      lastModified: new Date(),
+      url: `${SITE_URL}/fa`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.9,
     },
     {
-      url: "https://webclare.ir/en",
-      lastModified: new Date(),
+      url: `${SITE_URL}/en`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.9,
     },
   ];
 }

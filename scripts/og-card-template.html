@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<style>
+  @font-face {
+    font-family: "Vazirmatn";
+    src: url("./public/fonts/Vazirmatn-Variable.woff2") format("woff2-variations");
+    font-weight: 100 900;
+  }
+  @font-face {
+    font-family: "Space Grotesk";
+    src: url("./public/fonts/SpaceGrotesk-Variable.woff2") format("woff2-variations");
+    font-weight: 300 700;
+  }
+  @font-face {
+    font-family: "JetBrains Mono";
+    src: url("./public/fonts/JetBrainsMono-Variable.woff2") format("woff2-variations");
+    font-weight: 100 800;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1200px;
+    height: 630px;
+    overflow: hidden;
+    background: #07070c;
+    color: #f4f4f5;
+  }
+
+  .card {
+    position: relative;
+    width: 1200px;
+    height: 630px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 60px 72px;
+    font-family: "Space Grotesk", sans-serif;
+    overflow: hidden;
+  }
+  .card.fa { font-family: "Vazirmatn", sans-serif; direction: rtl; }
+
+  .grid-bg {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size: 54px 54px;
+    -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent);
+            mask-image: linear-gradient(to bottom, black 50%, transparent);
+  }
+  .glow1 {
+    position: absolute; top: -180px; left: -120px;
+    width: 640px; height: 640px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(245,158,11,0.22), transparent 70%);
+  }
+  .glow2 {
+    position: absolute; bottom: -220px; right: -140px;
+    width: 700px; height: 700px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(139,92,246,0.22), transparent 70%);
+  }
+
+  .row { position: relative; display: flex; align-items: center; gap: 18px; }
+  .card.fa .row { flex-direction: row-reverse; }
+  .card.fa .row.bottom { flex-direction: row; }
+
+  .logo {
+    display: flex; align-items: center; justify-content: center;
+    width: 68px; height: 68px; border-radius: 20px;
+    background: linear-gradient(120deg, #f59e0b, #fb923c, #8b5cf6);
+    color: #000; font-size: 38px; font-weight: 700;
+    font-family: "JetBrains Mono", monospace;
+    box-shadow: 0 0 45px -8px rgba(245,158,11,0.5);
+  }
+  .brand .name { font-size: 30px; font-weight: 700; line-height: 1.25; }
+  .brand .url {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 20px; color: #a1a1aa; letter-spacing: 4px;
+  }
+
+  .headline {
+    position: relative; text-align: center;
+    display: flex; flex-direction: column; align-items: center; gap: 22px;
+  }
+  .headline .h-name { font-size: 96px; font-weight: 900; line-height: 1.15; }
+  .headline .h-role {
+    font-size: 38px; font-weight: 700;
+    background: linear-gradient(120deg, #fbbf24, #fb923c, #a78bfa);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .headline .h-tech { font-size: 26px; color: #a1a1aa; }
+
+  .pill {
+    display: flex; align-items: center; gap: 12px;
+    border: 1px solid rgba(245,158,11,0.45); border-radius: 999px;
+    padding: 14px 26px; font-size: 24px; color: #fbbf24;
+  }
+  .dot { width: 15px; height: 15px; border-radius: 50%; background: #34d399; }
+  .email { font-family: "JetBrains Mono", monospace; font-size: 23px; color: #a1a1aa; }
+</style>
+</head>
+<body>
+  <div class="card" id="card">
+    <div class="grid-bg"></div>
+    <div class="glow1"></div>
+    <div class="glow2"></div>
+
+    <div class="row">
+      <div class="logo">M</div>
+      <div class="brand">
+        <div class="name" id="brandName"></div>
+        <div class="url">WEBCLARE.IR</div>
+      </div>
+    </div>
+
+    <div class="headline">
+      <div class="h-name" id="hName"></div>
+      <div class="h-role" id="hRole"></div>
+      <div class="h-tech" id="hTech"></div>
+    </div>
+
+    <div class="row bottom">
+      <div class="pill"><span class="dot"></span><span id="avail"></span></div>
+      <div style="flex:1"></div>
+      <div class="email">mooudmohammadi@gmail.com</div>
+    </div>
+  </div>
+
+  <script>
+    const fa = {
+      brand: "موعود محمدی تبار",
+      name: "موعود محمدی تبار",
+      role: "مهندس فرانت‌اند · React · Next.js · TypeScript",
+      tech: "معماری سیستم · پلتفرم‌های سازمانی · هوش مصنوعی",
+      avail: "آماده همکاری و پروژه‌های جدید",
+    };
+    const en = {
+      brand: "Mooud Mohammadi Tabar",
+      name: "Mooud Mohammadi Tabar",
+      role: "Frontend Engineer · React · Next.js · TypeScript",
+      tech: "System Architecture · Enterprise Platforms · AI",
+      avail: "Available for new projects",
+    };
+    const lang = new URLSearchParams(location.search).get("lang") === "en" ? en : fa;
+    const isFa = lang === fa;
+    if (isFa) document.getElementById("card").classList.add("fa");
+    document.getElementById("brandName").textContent = lang.brand;
+    document.getElementById("hName").textContent = lang.name;
+    document.getElementById("hName").style.fontSize = isFa ? "96px" : "72px";
+    document.getElementById("hName").style.whiteSpace = "nowrap";
+    document.getElementById("hRole").textContent = lang.role;
+    document.getElementById("hTech").textContent = lang.tech;
+    document.getElementById("avail").textContent = lang.avail;
+  </script>
+</body>
+</html>
